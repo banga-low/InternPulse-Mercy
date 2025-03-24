@@ -1,0 +1,208 @@
+/* Root Variables for Light and Dark Modes */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Light Mode Defaults */
+  --text-color: #213547;
+  --bg-color: #f8f3f3;
+  --button-bg: #f9f9f9;
+  --button-hover-border: #747bff;
+  --card-bg: #fff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Styles */
+.dark body {
+  --text-color: rgba(255, 255, 255, 0.87);
+  --bg-color: #242424;
+  --button-bg: #1a1a1a;
+  --button-hover-border: #646cff;
+  --card-bg: #333;
+  --card-shadow: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: background-color 0.3s, color 0.3s;
+  padding-left: 2rem;
+}
+
+/* Container to control layout */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  padding: 1rem;
+}
+
+/* Dashboard Title */
+.dashboard-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Section Styling */
+.section {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--card-bg);
+  box-shadow: 2px 2px 10px var(--card-shadow);
+  transition: background-color 0.3s;
+}
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* Card Wrapper */
+.card-wrapper {
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--card-bg);
+  box-shadow: 2px 2px 10px var(--card-shadow);
+  transition: transform 0.2s ease-in-out, background-color 0.3s;
+}
+
+.card-wrapper:hover {
+  transform: scale(1.03);
+}
+
+/* Links */
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--button-hover-border);
+}
+
+/* Headings */
+h1 {
+  font-size: 3em;
+  line-height: 1.1;
+}
+
+/* Buttons */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.3s;
+}
+
+button:hover {
+  border-color: var(--button-hover-border);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+  padding: 8px 16px;
+  background-color: #352929;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode-toggle:hover {
+  background-color: #ccc;
+}
+
+.dark .dark-mode-toggle {
+  background-color: #333;
+  color: white;
+}
+
+.dark .dark-mode-toggle:hover {
+  background-color: #382828;
+}
+
+/* Responsive Design */
+
+/* Screens up to 1000px */
+@media (max-width: 1000px) {
+  body {
+    padding-left: 1.5rem;
+  }
+  .container {
+    width: 95%;
+    max-width: 900px;
+  }
+  h1 {
+    font-size: 2.8em;
+  }
+  button {
+    padding: 0.5em 1em;
+    font-size: 0.95em;
+  }
+}
+
+/* Screens up to 750px */
+@media (max-width: 750px) {
+  body {
+    padding-left: 1rem;
+  }
+  .container {
+    width: 98%;
+    max-width: 700px;
+  }
+  h1 {
+    font-size: 2.5em;
+  }
+  button {
+    padding: 0.5em 0.9em;
+    font-size: 0.9em;
+  }
+}
+
+/* Screens up to 500px */
+@media (max-width: 500px) {
+  body {
+    padding-left: 0.5rem;
+  }
+  .container {
+    width: 100%;
+    padding: 0.8rem;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  button {
+    padding: 0.4em 0.8em;
+    font-size: 0.85em;
+  }
+}
