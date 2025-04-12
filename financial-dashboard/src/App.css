@@ -1,112 +1,81 @@
-/* Root container styling */
+/* Root container */
 #root {
-  max-width: 1280px;
+  max-width: 1800px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-/* Global body styles */
-body {
-  background-color: #f8f9fa;
-  color: #212529;
-  transition: background-color 0.3s, color 0.3s;
-  max-width: 100%;
-  overflow-x: hidden;
-  margin: 0;
-  font-family: sans-serif;
-}
-
-/* Dark mode styles */
-body.dark {
-  background-color: #212529;
-  color: #f8f9fa;
-}
-
-/* Button styles */
-button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-button.light-mode {
-  background-color: #e0e0e0;
-  color: #333;
-}
-
-button.dark-mode {
-  background-color: #444;
-  color: #fff;
-}
-
-/* Home container */
-.home-container {
-  width: 100%;
   padding: 1rem;
   box-sizing: border-box;
 }
 
-/* Section styling */
-.section {
-  margin-bottom: 2rem;
-}
-
-.section h2 {
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-}
-
 /* Grid layout */
 .grid-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-/* Card + chart wrapper */
-.card-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
   width: 100%;
 }
 
-/* Individual card */
-.card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 800px;
-  margin: 1rem auto;
+/* Card styling */
+.card-wrapper {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1.2rem;
+  transition: transform 0.2s;
 }
 
-/* Responsive adjustments */
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Chart container */
+.chart-container {
+  width: 100%;
+  height: 250px;
+  min-height: 250px;
+}
+
+/* Remove button */
+.remove-btn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #ff4444;
+  padding: 0 0.5rem;
+  line-height: 1;
+}
+
+/* Loading and error states */
+.loading {
+  color: #666;
+  padding: 1rem;
+  text-align: center;
+}
+
+.error {
+  color: #ff4444;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Mobile responsiveness */
 @media (max-width: 768px) {
-  #root {
-    padding: 1rem;
-  }
-
-  .section h2 {
-    font-size: 1.4rem;
-  }
-
   .grid-container {
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
   }
-
+  
+  #root {
+    padding: 0.5rem;
+  }
+  
   .card-wrapper {
-    width: 100%;
-  }
-
-  .card {
     padding: 1rem;
+  }
+  
+  .chart-container {
+    height: 200px;
   }
 }
