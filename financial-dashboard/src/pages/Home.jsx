@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import StockCard from "../components/StockCard";
 import CryptoCard from "../components/CryptoCard";
 import PriceChart from "../components/PriceChart";
+import "../App.css"; 
 
 const Home = () => {
   const [stockSymbols, setStockSymbols] = useState(["AAPL", "GOOGL", "TSLA"]);

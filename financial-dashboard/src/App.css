@@ -1,23 +1,30 @@
+/* Root container styling */
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  box-sizing: border-box;
 }
 
-/* Dark Mode Support */
+/* Global body styles */
 body {
   background-color: #f8f9fa;
   color: #212529;
   transition: background-color 0.3s, color 0.3s;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: sans-serif;
 }
 
+/* Dark mode styles */
 body.dark {
   background-color: #212529;
   color: #f8f9fa;
 }
 
-/* Button Styling */
+/* Button styles */
 button {
   padding: 10px 15px;
   border: none;
@@ -37,18 +44,69 @@ button.dark-mode {
   color: #fff;
 }
 
-/* Card Styles */
+/* Home container */
+.home-container {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Section styling */
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+/* Grid layout */
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Card + chart wrapper */
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Individual card */
 .card {
   background: rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 1rem 0;
+  width: 90%;
+  max-width: 800px;
+  margin: 1rem auto;
 }
 
-/* Responsive Design */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   #root {
+    padding: 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.4rem;
+  }
+
+  .grid-container {
+    gap: 1.5rem;
+  }
+
+  .card-wrapper {
+    width: 100%;
+  }
+
+  .card {
     padding: 1rem;
   }
 }
